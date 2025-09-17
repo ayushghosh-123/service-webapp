@@ -2,31 +2,26 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Zap, Shield, TrendingUp, Users, Clock, CheckCircle } from 'lucide-react';
-import Navbar from '@/components/Navbar';
+import { ArrowRight, Users, Clock, ScanHeart, ShoppingBag, House } from 'lucide-react';
 import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
 
 export default function HomePage() {
   const features = [
     {
-      icon: <Zap className="h-6 w-6" />,
-      title: "Lightning Fast",
-      description: "Optimize your business processes with our cutting-edge automation tools."
+      icon: <ScanHeart className="h-8 w-8" />,
+      title: "Health Care Service",
+      description: "Provides best ."
     },
     {
-      icon: <Shield className="h-6 w-6" />,
-      title: "Enterprise Security",
+      icon: <ShoppingBag  className="h-6 w-6" />,
+      title: " Online Garment ",
       description: "Bank-grade security to protect your sensitive business data."
     },
     {
-      icon: <TrendingUp className="h-6 w-6" />,
-      title: "Scalable Growth",
+      icon: <House  className="h-6 w-6" />,
+      title: "Home Care Services",
       description: "Solutions that grow with your business, from startup to enterprise."
-    },
-    {
-      icon: <Users className="h-6 w-6" />,
-      title: "Team Collaboration",
-      description: "Enhanced tools for seamless team communication and productivity."
     }
   ];
 
@@ -59,45 +54,23 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      
       <main className="space-y-16 pb-16">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-purple-800 text-white">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-            <div className="text-center">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                Transform Your Business with 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400"> Smart B2B Solutions</span>
-              </h1>
-              <p className="text-xl lg:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed">
-                Streamline operations, boost productivity, and scale your business with our comprehensive suite of B2B tools and services.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3">
-                  Get Started Free
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-3">
-                  Watch Demo
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Hero/>
 
         {/* Features Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Our B2B Solutions?
+              Why Choose Our Pinakdev healthcare and hospitality?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Built for modern businesses that demand reliability, scalability, and results.
+                We Provides you the best Healtcare , online Garment and Home Care services 
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {features.map((feature, index) => (
               <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardHeader className="text-center">

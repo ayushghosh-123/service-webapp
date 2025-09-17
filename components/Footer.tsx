@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Building2 className="h-8 w-8 text-blue-400" />
-              <span className="text-xl font-bold">B2B Solutions</span>
+              <span className="text-xl font-bold">Pinakdev healthcare and hospitality</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Empowering businesses with innovative B2B solutions. From automation to analytics, 

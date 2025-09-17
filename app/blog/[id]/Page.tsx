@@ -53,7 +53,6 @@ export default function BlogPost({ params }: { params: { id: string } }) {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Back Button */}
         <Button variant="ghost" className="mb-8" asChild>

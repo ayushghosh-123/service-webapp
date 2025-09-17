@@ -1,4 +1,5 @@
 import { ArrowRight, TrendingUp, Users, Globe } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -8,7 +9,7 @@ export default function Hero() {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Industry Insights &
+                MPT Qualified 
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   {' '}Professional Guidance
                 </span>
@@ -20,13 +21,13 @@ export default function Hero() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                <span>Explore Industries</span>
+              <Link href='/contact' className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <span>Bookin Here</span>
                 <ArrowRight className="h-5 w-5" />
-              </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition-all duration-300">
-                Read Latest Posts
-              </button>
+              </Link>
+              <Link href='/about' className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition-all duration-300">
+                Know More
+              </Link>
             </div>
 
             <div className="flex items-center space-x-8 pt-4">
