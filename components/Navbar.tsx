@@ -13,8 +13,9 @@ export default function Navbar() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
+    { name: 'About Us', href: 'about' },
     { name: 'Industries', href: 'industries' },
+    { name: 'Testimonials', href: 'testimonials' },
     { name: 'Privacy Policy', href: 'privacy' },
     { name: 'Contact', href: '/contact' }
   ];
@@ -28,7 +29,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
 
-              <span className="text-xl font-bold text-gray-900">Pinakdev healthcare and hospitality</span>
+              <span className="text-xl font-bold text-gray-900">Pinakdev</span>
             </Link>
           </div>
 

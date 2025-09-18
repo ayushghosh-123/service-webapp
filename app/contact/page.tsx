@@ -3,35 +3,33 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+
 
 export default function ContactPage() {
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email Us",
-      details: "hello@b2bsolutions.com",
+      details: "info.pinakdevhh@gmail.com",
       description: "We'll respond within 24 hours"
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
-      description: "Mon-Fri, 9am-6pm EST"
+      details: " ",
     },
-    {
-      icon: <MapPin className="h-6 w-6" />,
-      title: "Visit Us",
-      details: "123 Business Ave, Suite 100",
-      description: "New York, NY 10001"
-    },
-    {
-      icon: <Clock className="h-6 w-6" />,
-      title: "Business Hours",
-      details: "Monday - Friday",
-      description: "9:00 AM - 6:00 PM EST"
-    }
+    // {
+    //   icon: <MapPin className="h-6 w-6" />,
+    //   title: "Visit Us",
+    //   details: "123 Business Ave, Suite 100",
+    //   description: "New York, NY 10001"
+    // },
+    // {
+    //   icon: <Clock className="h-6 w-6" />,
+    //   title: "Business Hours",
+    //   details: "Monday - Friday",
+    //   description: "9:00 AM - 6:00 PM EST"
+    // }
   ];
 
   return (
@@ -126,7 +124,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-1 gap-6">
               {contactInfo.map((info, index) => (
                 <Card key={index} className="hover:shadow-md transition-shadow duration-300">
                   <CardContent className="p-6">
@@ -146,7 +144,7 @@ export default function ContactPage() {
             </div>
 
             {/* CTA Section */}
-            <Card className="bg-primary text-white">
+            {/* <Card className="bg-primary text-white">
               <CardContent className="p-8 text-center">
                 <h3 className="text-xl font-bold mb-4">Ready to Get Started?</h3>
                 <p className="text-blue-100 mb-6">
@@ -157,12 +155,12 @@ export default function ContactPage() {
                   Schedule Free Consultation
                 </Button>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
         </div>
 
         {/* Map Section (Placeholder) */}
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <Card className="overflow-hidden">
             <div className="h-64 bg-gray-200 flex items-center justify-center">
               <div className="text-center text-gray-500">
@@ -172,9 +170,8 @@ export default function ContactPage() {
               </div>
             </div>
           </Card>
-        </div>
+        </div> */}
       </main>
-      <Footer />
     </div>
   );
 }

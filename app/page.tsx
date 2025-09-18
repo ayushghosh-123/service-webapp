@@ -3,10 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Users, Clock, ScanHeart, ShoppingBag, House } from 'lucide-react';
-import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services'
-
+import About from '@/components/About'
 export default function HomePage() {
   const features = [
     {
@@ -161,17 +160,11 @@ export default function HomePage() {
               </Card>
             ))}
           </div>
-
-          <div className="text-center mt-12">
-            <Button asChild size="lg">
-              <Link href="/blog">View All Posts</Link>
-            </Button>
-          </div>
         </section>
 
 
         {/* About Us */}
-        <h1> About Us </h1>
+        <About/>
 
         {/* CTA Section
         <section className="bg-primary text-white py-16">

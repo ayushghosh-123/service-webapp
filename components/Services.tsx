@@ -1,5 +1,6 @@
-import { Heart, ShoppingBag, Home, ArrowRight } from 'lucide-react';
+import { Heart, ShoppingBag,  ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+
 
 export default function Industries() {
   const industries = [
@@ -10,7 +11,7 @@ export default function Industries() {
       features: ['Medical Technology', 'Patient Care', 'Healthcare Policy', 'Industry Trends'],
       color: 'from-blue-500 to-teal-400',
       bgColor: 'bg-blue-100',
-      link: 'https://rgsrehabcare.in/', // ✅ Added
+      link: '/healtcare' , // ✅ Added
       posts: 12
     },
     {

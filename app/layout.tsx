@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'B2B Solutions - Transform Your Business',
+  title: 'Pinakdev - Transform Your Business',
   description: 'Empowering businesses with innovative B2B solutions. From automation to analytics, we help companies scale and succeed in the digital age.',
 };
 
