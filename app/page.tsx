@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Users, Clock, ScanHeart, ShoppingBag, House } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import Services from '@/components/Services'
 
 export default function HomePage() {
   const features = [
@@ -90,7 +91,7 @@ export default function HomePage() {
         </section>
 
         {/* Stats Section */}
-        <section className="bg-gray-50 py-16">
+        {/* <section className="bg-gray-50 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
@@ -107,13 +108,13 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Blog Preview Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Latest Insights
+              Testimonials 
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Stay updated with the latest trends, strategies, and insights in the B2B world.
@@ -162,6 +163,10 @@ export default function HomePage() {
             </Button>
           </div>
         </section>
+
+        {/* Industry and Services  */}
+
+          <Services/>
 
         {/* CTA Section */}
         <section className="bg-primary text-white py-16">
