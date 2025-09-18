@@ -6,6 +6,9 @@ import { ArrowRight, Users, Clock, ScanHeart, ShoppingBag, House } from 'lucide-
 import Hero from '@/components/Hero';
 import Services from '@/components/Services'
 import About from '@/components/About'
+import Testimonial from '@/components/Testimonial'
+
+
 export default function HomePage() {
   const features = [
     {
@@ -114,57 +117,11 @@ export default function HomePage() {
 
           <Services/>
 
-        {/* Blog Preview Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Testimonials 
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Stay updated with the latest trends, strategies, and insights in the B2B world.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <Card key={post.id} className="hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Badge variant="secondary">{post.category}</Badge>
-                    <span className="text-sm text-gray-500 flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      {post.readTime}
-                    </span>
-                  </div>
-                  <CardTitle className="text-xl hover:text-primary transition-colors">
-                    <Link href={`/blog/${post.id}`}>{post.title}</Link>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed mb-4">
-                    {post.excerpt}
-                  </CardDescription>
-                  <Button variant="ghost" className="p-0 h-auto">
-                    <Link href={`/blog/${post.id}`} className="flex items-center text-primary">
-                      Read More <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-
         {/* About Us */}
         <About/>
+
+        {/* Blog Preview Section */}
+           <Testimonial/>       
 
         {/* CTA Section
         <section className="bg-primary text-white py-16">

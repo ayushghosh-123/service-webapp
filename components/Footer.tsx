@@ -40,7 +40,6 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-300">
               <li>HealtCare Service</li>
               <li>Online Garment</li>
-              <li>HomeCare Service</li>
             </ul>
           </div>
         </div>

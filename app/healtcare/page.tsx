@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Home, BriefcaseBusiness } from 'lucide-react';
+import { url } from 'inspector';
 
 interface CardProps {
   title: string;
@@ -41,8 +42,7 @@ const Card = ({ title, description, buttonText, icon, onClick }: CardProps) => {
 
 export default function App() {
   const handleHomeServiceClick = () => {
-    console.log("Navigating to Home Service booking...");
-    // Implement navigation logic here
+    window.location.href = 'https://rgsrehabcare.in/';
   };
 
   const handleB2BClick = () => {
