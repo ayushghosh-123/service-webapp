@@ -38,16 +38,15 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Business Automation</li>
-              <li>Data Analytics</li>
-              <li>Cloud Solutions</li>
-              <li>Consulting</li>
+              <li>HealtCare Service</li>
+              <li>Online Garment</li>
+              <li>HomeCare Service</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 B2B Solutions. All rights reserved.</p>
+          <p>&copy; 2025  Solutions. All rights reserved.</p>
         </div>
       </div>
     </footer>

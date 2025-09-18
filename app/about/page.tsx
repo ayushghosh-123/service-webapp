@@ -55,7 +55,7 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            About B2B Solutions
+            About Pinakdev healthcare and hospitality
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             We're on a mission to empower businesses with intelligent automation and data-driven solutions 
@@ -162,7 +162,7 @@ export default function AboutPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="bg-primary text-white py-16">
+        {/* <section className="bg-primary text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Our Impact</h2>
@@ -190,9 +190,9 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+        
       </main>
-      <Footer />
     </div>
   );
 }

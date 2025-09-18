@@ -1,4 +1,5 @@
-import { Heart, ShoppingBag, Home, Shield, ArrowRight } from 'lucide-react';
+import { Heart, ShoppingBag, Home, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Industries() {
   const industries = [
@@ -7,8 +8,9 @@ export default function Industries() {
       title: 'Healthcare Services',
       description: 'Comprehensive insights into medical practices, patient care, healthcare technology, and industry regulations.',
       features: ['Medical Technology', 'Patient Care', 'Healthcare Policy', 'Industry Trends'],
-      color: 'from-emerald-500 to-teal-600',
-      bgColor: 'bg-emerald-50',
+      color: 'from-blue-500 to-teal-400',
+      bgColor: 'bg-blue-100',
+      link: 'https://rgsrehabcare.in/', // ✅ Added
       posts: 12
     },
     {
@@ -18,6 +20,7 @@ export default function Industries() {
       features: ['Fashion Trends', 'E-commerce', 'Sustainable Fashion', 'Retail Technology'],
       color: 'from-purple-500 to-indigo-600',
       bgColor: 'bg-purple-50',
+      link: '/industries/garments', // ✅ Added
       posts: 8
     },
     {
@@ -27,16 +30,8 @@ export default function Industries() {
       features: ['Elderly Care', 'Home Health', 'Family Support', 'Wellness Programs'],
       color: 'from-blue-500 to-cyan-600',
       bgColor: 'bg-blue-50',
+      link: '/industries/home-care', // ✅ Added
       posts: 15
-    },
-    {
-      icon: Shield,
-      title: 'Privacy & Security',
-      description: 'Data protection insights, privacy regulations, cybersecurity best practices, and compliance guidance.',
-      features: ['Data Protection', 'GDPR Compliance', 'Cybersecurity', 'Privacy Rights'],
-      color: 'from-orange-500 to-red-600',
-      bgColor: 'bg-orange-50',
-      posts: 6
     }
   ];
 
@@ -53,7 +48,7 @@ export default function Industries() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8">
           {industries.map((industry, index) => {
             const IconComponent = industry.icon;
             return (
@@ -98,10 +93,13 @@ export default function Industries() {
                   </div>
 
                   <div className="pt-4 border-t border-gray-200">
-                    <button className="flex items-center space-x-2 text-gray-700 font-medium group-hover:text-blue-600 transition-colors">
-                      <span>Explore Articles</span>
+                    <Link
+                      href={industry.link}
+                      className="flex items-center space-x-2 text-gray-700 font-medium group-hover:text-blue-600 transition-colors"
+                    >
+                      <span>Explore More</span>
                       <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
