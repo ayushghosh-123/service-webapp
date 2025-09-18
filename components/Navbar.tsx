@@ -14,7 +14,7 @@ export default function Navbar() {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    {name: 'Industries', href: 'industries'},
+    { name: 'Industries', href: 'industries' },
     { name: 'Privacy Policy', href: 'privacy' },
     { name: 'Contact', href: '/contact' }
   ];
@@ -27,7 +27,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-             
+
               <span className="text-xl font-bold text-gray-900">Pinakdev healthcare and hospitality</span>
             </Link>
           </div>
@@ -39,11 +39,10 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    isActive(item.href)
-                      ? 'text-primary bg-primary/10'
-                      : 'text-gray-700 hover:text-primary hover:bg-gray-50'
-                  }`}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(item.href)
+                    ? 'text-primary bg-primary/10'
+                    : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                    }`}
                 >
                   {item.name}
                 </Link>
@@ -53,18 +52,11 @@ export default function Navbar() {
 
           {/* Auth Section */}
           <div className="hidden md:block">
-            <SignedOut>
-              <SignInButton mode="modal">
-                <Button variant="outline" className="mr-2">Sign In</Button>
-              </SignInButton>
-              <Button asChild>
-                <Link href="/sign-up">Get Started</Link>
-              </Button>
-            </SignedOut>
-            <SignedIn>
-              <UserButton afterSignOutUrl="/" />
-            </SignedIn>
+            <button className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-gray-900 hover:scale-105 transition-all duration-300">
+              Online Booking
+            </button>
           </div>
+
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -86,30 +78,19 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                    isActive(item.href)
-                      ? 'text-primary bg-primary/10'
-                      : 'text-gray-700 hover:text-primary hover:bg-gray-50'
-                  }`}
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive(item.href)
+                    ? 'text-primary bg-primary/10'
+                    : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t">
-                <SignedOut>
-                  <SignInButton mode="modal">
-                    <Button variant="outline" className="w-full mb-2">Sign In</Button>
-                  </SignInButton>
-                  <Button asChild className="w-full">
-                    <Link href="/sign-up">Get Started</Link>
-                  </Button>
-                </SignedOut>
-                <SignedIn>
-                  <div className="flex justify-center">
-                    <UserButton afterSignOutUrl="/" />
-                  </div>
-                </SignedIn>
+              <div className="pt-4 border-t align-middle">
+                  <button className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-gray-900 hover:scale-105 transition-all duration-300">
+                    Online Booking
+                  </button>
               </div>
             </div>
           </div>

@@ -91,7 +91,7 @@ export default function HomePage() {
         </section>
 
         {/* Stats Section */}
-        {/* <section className="bg-gray-50 py-16">
+        <section className="bg-gray-50 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
@@ -108,7 +108,12 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
+
+        
+        {/* Industry and Services  */}
+
+          <Services/>
 
         {/* Blog Preview Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -164,11 +169,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Industry and Services  */}
 
-          <Services/>
+        {/* About Us */}
+        <h1> About Us </h1>
 
-        {/* CTA Section */}
+        {/* CTA Section
         <section className="bg-primary text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
@@ -186,7 +191,7 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );
