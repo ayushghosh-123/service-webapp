@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/nextjs';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Building2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,10 +13,10 @@ export default function Navbar() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: 'about' },
-    { name: 'Industries', href: 'industries' },
-    { name: 'Privacy Policy', href: 'privacy' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'About Us', href: '/about' },
+    { name: 'Industries', href: '/industries' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Privacy Policy', href: '/privacy' }
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -25,8 +25,18 @@ export default function Navbar() {
     <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
+
+          {/* Logo Section */}
+          <div className="flex">
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.svg"
+                alt="Pinakdev Logo"
+                width={280}
+                height={280}
+                className="h-40 w-30" 
+                priority
+              />
 
               <span className="text-xl font-bold text-gray-900">Pinakdev</span>
             </Link>
@@ -40,8 +50,8 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(item.href)
-                    ? 'text-primary bg-primary/10'
-                    : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                      ? 'text-primary bg-primary/10'
+                      : 'text-gray-700 hover:text-primary hover:bg-gray-50'
                     }`}
                 >
                   {item.name}
@@ -50,13 +60,12 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Auth Section */}
+          {/* Desktop CTA */}
           <div className="hidden md:block">
             <button className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-gray-900 hover:scale-105 transition-all duration-300">
               Online Booking
             </button>
           </div>
-
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -64,6 +73,7 @@ export default function Navbar() {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -79,18 +89,18 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive(item.href)
-                    ? 'text-primary bg-primary/10'
-                    : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                      ? 'text-primary bg-primary/10'
+                      : 'text-gray-700 hover:text-primary hover:bg-gray-50'
                     }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t align-middle">
-                  <button className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-gray-900 hover:scale-105 transition-all duration-300">
-                    Online Booking
-                  </button>
+              <div className="pt-4 border-t flex justify-center">
+                <button className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-gray-900 hover:scale-105 transition-all duration-300">
+                  Online Booking
+                </button>
               </div>
             </div>
           </div>

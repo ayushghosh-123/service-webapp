@@ -21,7 +21,7 @@ export default function Industries() {
       features: ['Fashion Trends', 'E-commerce', 'Sustainable Fashion', 'Retail Technology'],
       color: 'from-purple-500 to-indigo-600',
       bgColor: 'bg-purple-50',
-      link: '/industries/garments', // ✅ Added
+      link: 'https://wa.me/+917718535104', // ✅ Added
       posts: 8
     },
   ];

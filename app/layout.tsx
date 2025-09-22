@@ -3,12 +3,12 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { div } from 'framer-motion/client';
+// import { div } from 'framer-motion/client';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Pinakdev - Transform Your Business',
+  title: 'Pinakdev',
   description: 'Empowering businesses with innovative B2B solutions. From automation to analytics, we help companies scale and succeed in the digital age.',
 };
 
