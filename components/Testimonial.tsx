@@ -129,7 +129,7 @@ export default function App() {
                 </button>
 
                 {/* Current testimonial cards container */}
-                <div className="flex flex-row gap-5 justify-center flex-1">
+                <div className="flex flex-col md:flex-row gap-5 justify-center flex-1">
                     {displayedTestimonials.map((testimonial) => (
                         <TestimonialCard key={testimonial.id} testimonial={testimonial} />
                     ))}

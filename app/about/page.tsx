@@ -1,6 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Award } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle  } from '@/components/ui/card';
+import { Users, Award  } from 'lucide-react';
 import Image from 'next/image';
+import { Target, TrendingUp } from 'lucide-react';
 
 export default function AboutPage() {
   const team = [
