@@ -24,6 +24,8 @@ export default function Hero() {
     },
   ];
 
+  // have some todo 
+  
   // Auto-slide every 5s
   useEffect(() => {
     const interval = setInterval(() => {

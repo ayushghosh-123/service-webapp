@@ -1,7 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-// import { Badge } from '@/components/ui/badge';
-import { Users, Target, Award, TrendingUp } from 'lucide-react';
-
+import { Users, Award } from 'lucide-react';
+import Image from 'next/image';
 
 export default function AboutPage() {
   const team = [
@@ -55,7 +54,7 @@ export default function AboutPage() {
 
                 <p>
                   In hospitality, we extend the same principles of comfort and trust.
-                  Whether it’s through curated patient accommodations, supportive environments,
+                  Whether it&s through curated patient accommodations, supportive environments,
                   or staff trained to prioritize empathy, we make sure every individual
                   feels at home during their journey with us.
                 </p>
@@ -71,11 +70,7 @@ export default function AboutPage() {
             {/* Right Image */}
             <div className="relative">
               <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
-                <img
-                  src="https://images.pexels.com/photos/6749779/pexels-photo-6749779.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Caring healthcare team"
-                  className="w-full h-full object-cover"
-                />
+                <Image width={200} height={200} src='./logo.svg' alt=''></Image>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white shadow-md rounded-lg p-4 w-64">
                 <p className="text-sm font-medium text-gray-800">
@@ -150,38 +145,6 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
-
-        {/* Stats Section */}
-        {/* <section className="bg-primary text-white py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Our Impact</h2>
-              <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-                Numbers that reflect our commitment to client success and platform excellence.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold mb-2">500+</div>
-                <div className="text-blue-100">Enterprise Clients</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-2">$50M+</div>
-                <div className="text-blue-100">Revenue Generated</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-2">99.9%</div>
-                <div className="text-blue-100">Platform Uptime</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-2">24/7</div>
-                <div className="text-blue-100">Expert Support</div>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
       </main>
     </div>
   );

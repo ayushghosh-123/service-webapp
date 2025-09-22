@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Home, BriefcaseBusiness } from 'lucide-react';
-import { url } from 'inspector';
 
 interface CardProps {
   title: string;

@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 
 export default function ContactPage() {
@@ -18,18 +18,6 @@ export default function ContactPage() {
       title: "Call Us",
       details: " ",
     },
-    // {
-    //   icon: <MapPin className="h-6 w-6" />,
-    //   title: "Visit Us",
-    //   details: "123 Business Ave, Suite 100",
-    //   description: "New York, NY 10001"
-    // },
-    // {
-    //   icon: <Clock className="h-6 w-6" />,
-    //   title: "Business Hours",
-    //   details: "Monday - Friday",
-    //   description: "9:00 AM - 6:00 PM EST"
-    // }
   ];
 
   return (
@@ -142,35 +130,8 @@ export default function ContactPage() {
                 </Card>
               ))}
             </div>
-
-            {/* CTA Section */}
-            {/* <Card className="bg-primary text-white">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-xl font-bold mb-4">Ready to Get Started?</h3>
-                <p className="text-blue-100 mb-6">
-                  Schedule a free consultation with our team to discuss your specific needs 
-                  and how our solutions can benefit your business.
-                </p>
-                <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
-                  Schedule Free Consultation
-                </Button>
-              </CardContent>
-            </Card> */}
           </div>
         </div>
-
-        {/* Map Section (Placeholder) */}
-        {/* <div className="mt-16">
-          <Card className="overflow-hidden">
-            <div className="h-64 bg-gray-200 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <MapPin className="h-12 w-12 mx-auto mb-2" />
-                <p>Interactive Map Coming Soon</p>
-                <p className="text-sm">123 Business Ave, Suite 100, New York, NY 10001</p>
-              </div>
-            </div>
-          </Card>
-        </div> */}
       </main>
     </div>
   );

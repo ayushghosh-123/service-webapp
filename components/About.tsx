@@ -1,6 +1,6 @@
 'use client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
 
 export default function AboutPage() {
   const team = [
@@ -66,11 +66,7 @@ export default function AboutPage() {
             {/* Right Image */}
             <div className="relative">
               <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
-                <img
-                  src="https://images.pexels.com/photos/6749779/pexels-photo-6749779.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Caring healthcare team"
-                  className="w-full h-full object-cover"
-                />
+                <Image src='./logo.svg' alt='' width={200} height={200}></Image>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white shadow-md rounded-lg p-4 w-64">
                 <p className="text-sm font-medium text-gray-800">
@@ -91,7 +87,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {team.map((member, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
