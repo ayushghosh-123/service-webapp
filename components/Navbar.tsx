@@ -16,7 +16,7 @@ export default function Navbar() {
     { name: 'About Us', href: '/about' },
     { name: 'Industries', href: '/industries' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Privacy Policy', href: '/privacy' }
+    { name: 'Privacy Policy', href: '/privacy' },
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -27,46 +27,47 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
 
           {/* Logo Section */}
-          <div className="flex">
-            <Link href="/" className="flex items-center">
+          {/* Logo Section */}
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-1 sm:space-x-2">
               <Image
                 src="/logo.svg"
                 alt="Pinakdev Logo"
-                width={280}
-                height={280}
-                className="h-40 w-30"
+                width={40}
+                height={40}
+                className="h-10 w-10 sm:h-12 sm:w-12"
                 priority
               />
-
-              <span className="text-xl font-bold text-gray-900">Pinakdev</span>
+              <span className="text-lg sm:text-xl font-bold text-gray-900">
+                Pinakdev
+              </span>
             </Link>
           </div>
 
+
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(item.href)
+          <div className="hidden md:flex items-center space-x-6">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(item.href)
                     ? 'text-primary bg-primary/10'
                     : 'text-gray-700 hover:text-primary hover:bg-gray-50'
-                    }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+                  }`}
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <a
-              href="https://wa.me/+918617073641"
+              href="https://wa.me/918617073641"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg 
+              className="bg-black text-white text-sm sm:text-base font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg 
                hover:bg-gray-900 hover:scale-105 transition-all duration-300 inline-block"
             >
               Online Booking
@@ -77,11 +78,11 @@ export default function Navbar() {
           <div className="md:hidden">
             <Button
               variant="ghost"
-              size="sm"
+              size="icon"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
@@ -89,27 +90,27 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+            <div className="px-4 py-4 space-y-2 bg-white border-t rounded-b-lg shadow-md">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive(item.href)
-                    ? 'text-primary bg-primary/10'
-                    : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                      ? 'text-primary bg-primary/10'
+                      : 'text-gray-700 hover:text-primary hover:bg-gray-50'
                     }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t flex justify-center">
+              <div className="pt-3 border-t flex justify-center">
                 <a
-                  href="https://wa.me/+918617073641"
+                  href="https://wa.me/918617073641"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg 
-               hover:bg-gray-900 hover:scale-105 transition-all duration-300 inline-block"
+                  className="w-full text-center bg-black text-white text-base font-semibold px-4 py-2 rounded-lg shadow-md 
+                   hover:bg-gray-900 transition-all duration-300"
                 >
                   Online Booking
                 </a>

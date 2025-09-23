@@ -97,8 +97,7 @@ export default function App() {
         setCurrentTestimonialIndex((prev) => (prev - testimonialsPerPage + testimonials.length) % testimonials.length);
     };
 
-    // Get the three testimonials to display based on the current index.
-    // Use a slice and handle the wrap-around logic for the carousel.
+
     const displayedTestimonials = testimonials.slice(currentTestimonialIndex, currentTestimonialIndex + testimonialsPerPage);
     if (displayedTestimonials.length < testimonialsPerPage) {
         displayedTestimonials.push(...testimonials.slice(0, testimonialsPerPage - displayedTestimonials.length));
