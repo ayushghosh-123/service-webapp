@@ -69,15 +69,15 @@ export default function AboutPage() {
 
             {/* Right Image */}
             <div className="relative">
-              <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
-                <Image width={200} height={200} src='./logo.svg' alt=''></Image>
+              <div className=" rounded-full overflow-hidden">
+                <Image width={700} height={700} src='/logo.svg' alt='logo image' className='w-fit h-screen'></Image>
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white shadow-md rounded-lg p-4 w-64">
+              {/* <div className="absolute -bottom-6 -right-6 bg-white  rounded-lg p-4 w-64">
                 <p className="text-sm font-medium text-gray-800">
                   <span className="text-primary font-bold">7+ Years</span> of trusted
                   service in patient care and hospitality excellence.
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

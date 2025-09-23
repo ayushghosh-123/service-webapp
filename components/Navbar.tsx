@@ -26,13 +26,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-1 sm:space-x-2">
+            <Link href="/" className="flex items-center space-x-0 sm:space-x-1">
               <Image
                 src="/logo.svg"
                 alt="Pinakdev Logo"
                 width={100}
                 height={100}
-                className="h-20 w-20 sm:h-20 sm:w-20"
+                className="h-30 w-30 sm:h-30 sm:w-30"
                 priority
               />
               <span className="text-lg sm:text-xl font-bold text-gray-900">
