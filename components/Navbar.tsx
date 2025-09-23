@@ -34,7 +34,7 @@ export default function Navbar() {
                 alt="Pinakdev Logo"
                 width={280}
                 height={280}
-                className="h-40 w-30" 
+                className="h-40 w-30"
                 priority
               />
 
@@ -50,8 +50,8 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(item.href)
-                      ? 'text-primary bg-primary/10'
-                      : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                    ? 'text-primary bg-primary/10'
+                    : 'text-gray-700 hover:text-primary hover:bg-gray-50'
                     }`}
                 >
                   {item.name}
@@ -62,9 +62,15 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <button className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-gray-900 hover:scale-105 transition-all duration-300">
+            <a
+              href="https://wa.me/+918617073641"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg 
+               hover:bg-gray-900 hover:scale-105 transition-all duration-300 inline-block"
+            >
               Online Booking
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -89,8 +95,8 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive(item.href)
-                      ? 'text-primary bg-primary/10'
-                      : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                    ? 'text-primary bg-primary/10'
+                    : 'text-gray-700 hover:text-primary hover:bg-gray-50'
                     }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -98,9 +104,15 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="pt-4 border-t flex justify-center">
-                <button className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-gray-900 hover:scale-105 transition-all duration-300">
+                <a
+                  href="https://wa.me/+918617073641"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl shadow-lg 
+               hover:bg-gray-900 hover:scale-105 transition-all duration-300 inline-block"
+                >
                   Online Booking
-                </button>
+                </a>
               </div>
             </div>
           </div>

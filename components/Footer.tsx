@@ -13,13 +13,10 @@ export default function Footer() {
               <span className="text-xl font-bold">Pinakdev healthcare and hospitality</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
-              Empowering businesses with innovative B2B solutions. From automation to analytics, 
-              we help companies scale and succeed in the digital age.
+              Empowering lives with trusted healthcare and exceptional hospitality. From medical care to comfort solutions, we ensure well-being and satisfaction at every step.
             </p>
             <div className="flex space-x-4">
-              <Twitter className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-              <Linkedin className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-              <Mail className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
+
             </div>
           </div>
 
