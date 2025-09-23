@@ -25,17 +25,14 @@ export default function Navbar() {
     <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-
-          {/* Logo Section */}
-          {/* Logo Section */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-1 sm:space-x-2">
               <Image
                 src="/logo.svg"
                 alt="Pinakdev Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10 sm:h-12 sm:w-12"
+                width={100}
+                height={100}
+                className="h-20 w-20 sm:h-20 sm:w-20"
                 priority
               />
               <span className="text-lg sm:text-xl font-bold text-gray-900">
@@ -44,8 +41,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
@@ -61,20 +56,18 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
           <div className="hidden md:block">
             <a
               href="https://wa.me/918617073641"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black text-white text-sm sm:text-base font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg 
-               hover:bg-gray-900 hover:scale-105 transition-all duration-300 inline-block"
+                hover:bg-gray-900 hover:scale-105 transition-all duration-300 inline-block"
             >
               Online Booking
             </a>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <Button
               variant="ghost"
@@ -87,7 +80,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
             <div className="px-4 py-4 space-y-2 bg-white border-t rounded-b-lg shadow-md">
@@ -110,7 +102,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full text-center bg-black text-white text-base font-semibold px-4 py-2 rounded-lg shadow-md 
-                   hover:bg-gray-900 transition-all duration-300"
+                    hover:bg-gray-900 transition-all duration-300"
                 >
                   Online Booking
                 </a>
