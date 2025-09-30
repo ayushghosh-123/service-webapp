@@ -10,7 +10,7 @@ interface Slide {
   title: string;
   desc: string;
   highlight: string;
-  image: string;
+  image?: string; // optional now
 }
 
 // Slides moved outside the component to remain constant
@@ -25,7 +25,7 @@ const slides: Slide[] = [
     title: "Premium Online Garments",
     desc: "Explore luxury fashion and everyday essentials with our trusted ecommerce garment platform.",
     highlight: "Online Garments",
-    image: "/onlinegarment.svg",
+    image: "/onlinegarment2.svg",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function Hero() {
 
   return (
     <section className="relative bg-black text-white py-20 lg:py-32 overflow-hidden">
-      {/* Background gradients and blobs for visual interest */}
+      {/* Background blobs */}
       <div className="absolute inset-0 z-0 opacity-40">
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-gray-600 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -91,7 +91,7 @@ export default function Hero() {
                 </Link>
               </div>
 
-              {/* Features with updated styles */}
+              {/* Features */}
               <div className="flex items-center space-x-8 pt-4 justify-center lg:justify-start">
                 <div className="flex flex-col items-center space-y-1">
                   <TrendingUp className="h-8 w-8 text-blue-400 drop-shadow-md" />
@@ -108,23 +108,26 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right illustration */}
-            <motion.div
-              key={`image-${index}`}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.8 }}
-              className="relative w-full h-[300px] lg:h-[450px] flex items-center justify-center"
-            >
-              <Image
-                src={slides[index].image}
-                alt={slides[index].highlight}
-                fill
-                className="object-contain bg-white rounded-2xl drop-shadow-2xl"
-                priority
-              />
-            </motion.div>
+            {/* Right illustration (optional image) */}
+            {slides[index].image && (
+              <motion.div
+                key={`image-${index}`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.8 }}
+                className={`relative w-full h-[300px] lg:h-[450px] flex items-center justify-center rounded-2xl drop-shadow-2xl 
+                  ${slides[index].image.includes("logo.svg") ? "bg-white" : "bg-yellow-300"}`}
+              >
+                <Image
+                  src={slides[index].image}
+                  alt={slides[index].highlight}
+                  fill
+                  className="object-contain p-6"
+                  priority
+                />
+              </motion.div>
+            )}
           </motion.div>
         </AnimatePresence>
       </div>

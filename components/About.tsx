@@ -11,10 +11,36 @@ import Image from "next/image";
 export default function AboutPage() {
   const team = [
     {
-      name: "Tanmoy Saha",
-      bio: "Former VP of Operations at TechCorp with 15+ years of B2B experience.",
-      image:
-        "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Tonmoy Saha",
+      qualifications: [
+        "BPT (WBUHS)",
+        "MPT-Neurology (WBUHS)",
+        "MIAP",
+        "M.FIMT",
+        "CDNT (UK)",
+      ],
+      current_roles: {
+        department_incharge:
+          "LIVGASTRO Center for Integrative Liver Gastro Care, Kolkata",
+        chief_physiotherapist:
+          "Horizone Life Line Multispeciality Hospital, Kolkata",
+        founder: "RGS REHABCARE",
+      },
+      past_experience: [
+        "Ex-Physiotherapist: Desun Hospital and Heart Institute, Kolkata",
+      ],
+      education: [
+        "Master of Physiotherapy in Neurology (West Bengal University of Health Sciences)",
+      ],
+      certifications: [
+        "Certified Dry Needling Therapist (CPD-UK)",
+        "Certificate in Cupping Therapy",
+      ],
+      memberships: [
+        "Federation of Indian Manual Therapist",
+        "Indian Association of Physiotherapist",
+      ],
+      image: "/logo.svg", // added fallback image
     },
     {
       name: "Sanhita Ghosh",
@@ -75,10 +101,10 @@ export default function AboutPage() {
 
                 <p>
                   In hospitality, we extend the same principles of comfort and
-                  trust. Whether it&s through curated patient accommodations,
-                  supportive environments, or staff trained to prioritize
-                  empathy, we make sure every individual feels at home during
-                  their journey with us.
+                  trust. Whether it&apos;s through curated patient
+                  accommodations, supportive environments, or staff trained to
+                  prioritize empathy, we make sure every individual feels at
+                  home during their journey with us.
                 </p>
 
                 <p className="text-lg font-semibold text-primary">
@@ -92,25 +118,26 @@ export default function AboutPage() {
               </div>
             </div>
 
-
+            {/* Right Image */}
             <div className="relative flex justify-center items-center">
-              <div className="w-60 h-60 sm:w-76 sm:h-76 md:w-72 md:h-72 rounded-full overflow-hidden">
+              <div className="w-50 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden">
                 <Image
                   src="/logo.svg"
                   alt="Pinakdev Logo"
-                  width={1500}
-                  height={1500}
-                  className="w-full h-full object-contain "
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-contain"
+                  priority
                 />
               </div>
+
               <div className="absolute -bottom-6 -right-6 bg-white shadow-md rounded-lg p-4 w-64">
                 <p className="text-sm font-medium text-gray-800">
-                  <span className="text-primary font-bold">7+ Years</span> of trusted
-                  service in patient care and hospitality excellence.
+                  <span className="text-primary font-bold">7+ Years</span> of
+                  trusted service in patient care and hospitality excellence.
                 </p>
               </div>
             </div>
-
           </div>
         </section>
 
@@ -135,17 +162,87 @@ export default function AboutPage() {
                 <CardHeader>
                   <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4">
                     <img
-                      src={member.image}
+                      src={member.image || "/placeholder.png"}
                       alt={member.name}
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <CardTitle className="text-xl">{member.name}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed">
-                    {member.bio}
-                  </CardDescription>
+                <CardContent className="space-y-4 text-left">
+                  {/* If bio exists (simple member) */}
+                  {member.bio && (
+                    <CardDescription className="text-gray-600 leading-relaxed">
+                      {member.bio}
+                    </CardDescription>
+                  )}
+
+                  {/* Detailed info (for physiotherapist profile) */}
+                  {member.qualifications && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Qualifications</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {member.qualifications.map((q, i) => (
+                          <li key={i}>{q}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {member.current_roles && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Current Roles</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {Object.entries(member.current_roles).map(([role, value], i) => (
+                          <li key={i}>{value}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {member.past_experience && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Past Experience</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {member.past_experience.map((exp, i) => (
+                          <li key={i}>{exp}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {member.education && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Education</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {member.education.map((edu, i) => (
+                          <li key={i}>{edu}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {member.certifications && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Certifications</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {member.certifications.map((cert, i) => (
+                          <li key={i}>{cert}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {member.memberships && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Memberships</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {member.memberships.map((mem, i) => (
+                          <li key={i}>{mem}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -155,3 +252,4 @@ export default function AboutPage() {
     </div>
   );
 }
+
