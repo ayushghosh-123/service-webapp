@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -8,9 +9,34 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactPage() {
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.id]: e.target.value });
+  };
+
+  const sendToWhatsApp = () => {
+    const phoneNumber = "918617073641"; // no "+" here
+    const text = `Hello, my name is ${form.firstName} ${form.lastName}.
+Email: ${form.email}
+
+Message: ${form.message}`;
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      text
+    )}`;
+    window.open(whatsappURL, "_blank");
+  };
+
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6" />,
@@ -21,7 +47,14 @@ export default function ContactPage() {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
-      details: "+918617073641",
+      details: "+91 8617073641",
+      description: "Available Mon-Sat, 9AM - 7PM",
+    },
+    {
+      icon: <MapPin className="h-6 w-6" />,
+      title: "Visit Us",
+      details: "Kolkata, West Bengal, India",
+      description: "Our office is open Mon-Fri, 10AM - 6PM",
     },
   ];
 
@@ -34,8 +67,8 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to transform your business? We'd love to hear from you. Let's
-            discuss how we can help you achieve your goals.
+            Ready to connect with us? Fill in your details and we’ll reach out
+            to you quickly.
           </p>
         </div>
 
@@ -46,8 +79,7 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle className="text-2xl">Send us a message</CardTitle>
                 <CardDescription>
-                  Fill out the form below and we'll get back to you as soon as
-                  possible.
+                  Fill out the form below and we’ll get back to you.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -59,7 +91,12 @@ export default function ContactPage() {
                     >
                       First Name
                     </label>
-                    <Input id="firstName" placeholder="John" />
+                    <Input
+                      id="firstName"
+                      value={form.firstName}
+                      onChange={handleChange}
+                      placeholder="John"
+                    />
                   </div>
                   <div>
                     <label
@@ -68,7 +105,12 @@ export default function ContactPage() {
                     >
                       Last Name
                     </label>
-                    <Input id="lastName" placeholder="Doe" />
+                    <Input
+                      id="lastName"
+                      value={form.lastName}
+                      onChange={handleChange}
+                      placeholder="Doe"
+                    />
                   </div>
                 </div>
 
@@ -82,28 +124,10 @@ export default function ContactPage() {
                   <Input
                     id="email"
                     type="email"
+                    value={form.email}
+                    onChange={handleChange}
                     placeholder="john@company.com"
                   />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Company
-                  </label>
-                  <Input id="company" placeholder="Your Company Name" />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Subject
-                  </label>
-                  <Input id="subject" placeholder="How can we help you?" />
                 </div>
 
                 <div>
@@ -116,19 +140,21 @@ export default function ContactPage() {
                   <Textarea
                     id="message"
                     rows={6}
+                    value={form.message}
+                    onChange={handleChange}
                     placeholder="Tell us more about your project or questions..."
                   />
                 </div>
 
-                <a
-                  href="https://wa.me/+918617073641"
-                className="w-full inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 
+                <button
+                  onClick={sendToWhatsApp}
+                  className="w-full inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 
              text-white font-semibold shadow-md hover:bg-primary/90 
              focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 
              transition-colors duration-200"
                 >
-                  Send Message
-                </a>
+                  Send via WhatsApp
+                </button>
               </CardContent>
             </Card>
           </div>
@@ -140,13 +166,11 @@ export default function ContactPage() {
                 Contact Information
               </h2>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Whether you're looking to streamline your operations, implement
-                new automation, or explore our B2B solutions, we're here to
-                help. Reach out through any of the channels below.
+                Reach out through any of the channels below. We’re here to help.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 gap-6">
               {contactInfo.map((info, index) => (
                 <Card
                   key={index}
@@ -164,9 +188,11 @@ export default function ContactPage() {
                         <p className="text-primary font-medium mb-1">
                           {info.details}
                         </p>
-                        <p className="text-sm text-gray-600">
-                          {info.description}
-                        </p>
+                        {info.description && (
+                          <p className="text-sm text-gray-600">
+                            {info.description}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </CardContent>
@@ -175,6 +201,26 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+
+        {/* Contact Section (Bottom CTA) */}
+        <section className="mt-20 text-center bg-gray-50 py-16 rounded-2xl shadow-inner">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Still have questions?
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Our team is always here to help you. Contact us today and let’s
+            discuss your needs.
+          </p>
+          <button
+            onClick={sendToWhatsApp}
+            className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 
+           text-white font-semibold shadow-md hover:bg-primary/90 
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 
+           transition-colors duration-200"
+          >
+            Chat with Us on WhatsApp
+          </button>
+        </section>
       </main>
     </div>
   );

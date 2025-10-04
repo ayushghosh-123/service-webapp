@@ -40,14 +40,21 @@ export default function AboutPage() {
         "Federation of Indian Manual Therapist",
         "Indian Association of Physiotherapist",
       ],
-      image: "/tonmoy.svg", // added fallback image
+      image: "/tonmoy.svg",
     },
     {
       name: "Sanhita Ghosh",
-      bio: "Ex-Google engineer specializing in enterprise automation and AI solutions.",
-      image:
-        "/sahita.svg"
-    }
+      qualifications: ["General nursing and midwify ", " Higher Secondery education"],
+      current_roles: {
+        stuff_nurse: "PARKVIEW Super Speciality Hospital, kolkata",
+        
+      },
+      education: [
+        "Diploma in nursing",
+      ],
+      
+      image: "/sahita.svg",
+    },
   ];
 
   return (
@@ -108,7 +115,7 @@ export default function AboutPage() {
                 </p>
 
                 <p className="text-lg font-semibold text-primary">
-                  For us, healthcare and hospitality are not two industries —
+                  For us, healthcare and hospitality are not two industries —{" "}
                   they are one shared mission:{" "}
                   <span className="underline decoration-primary">
                     to serve people with excellence and compassion
@@ -170,17 +177,11 @@ export default function AboutPage() {
                   <CardTitle className="text-xl">{member.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-left">
-                  {/* If bio exists (simple member) */}
-                  {member.bio && (
-                    <CardDescription className="text-gray-600 leading-relaxed">
-                      {member.bio}
-                    </CardDescription>
-                  )}
-
-                  {/* Detailed info (for physiotherapist profile) */}
                   {member.qualifications && (
                     <div>
-                      <h4 className="font-semibold text-gray-800">Qualifications</h4>
+                      <h4 className="font-semibold text-gray-800">
+                        Qualifications
+                      </h4>
                       <ul className="list-disc list-inside text-gray-600 text-sm">
                         {member.qualifications.map((q, i) => (
                           <li key={i}>{q}</li>
@@ -191,18 +192,24 @@ export default function AboutPage() {
 
                   {member.current_roles && (
                     <div>
-                      <h4 className="font-semibold text-gray-800">Current Roles</h4>
+                      <h4 className="font-semibold text-gray-800">
+                        Current Roles
+                      </h4>
                       <ul className="list-disc list-inside text-gray-600 text-sm">
-                        {Object.entries(member.current_roles).map(([role, value], i) => (
-                          <li key={i}>{value}</li>
-                        ))}
+                        {Object.entries(member.current_roles).map(
+                          ([, value], i) => (
+                            <li key={i}>{value}</li>
+                          )
+                        )}
                       </ul>
                     </div>
                   )}
 
                   {member.past_experience && (
                     <div>
-                      <h4 className="font-semibold text-gray-800">Past Experience</h4>
+                      <h4 className="font-semibold text-gray-800">
+                        Past Experience
+                      </h4>
                       <ul className="list-disc list-inside text-gray-600 text-sm">
                         {member.past_experience.map((exp, i) => (
                           <li key={i}>{exp}</li>
@@ -224,7 +231,9 @@ export default function AboutPage() {
 
                   {member.certifications && (
                     <div>
-                      <h4 className="font-semibold text-gray-800">Certifications</h4>
+                      <h4 className="font-semibold text-gray-800">
+                        Certifications
+                      </h4>
                       <ul className="list-disc list-inside text-gray-600 text-sm">
                         {member.certifications.map((cert, i) => (
                           <li key={i}>{cert}</li>
@@ -235,7 +244,9 @@ export default function AboutPage() {
 
                   {member.memberships && (
                     <div>
-                      <h4 className="font-semibold text-gray-800">Memberships</h4>
+                      <h4 className="font-semibold text-gray-800">
+                        Memberships
+                      </h4>
                       <ul className="list-disc list-inside text-gray-600 text-sm">
                         {member.memberships.map((mem, i) => (
                           <li key={i}>{mem}</li>
@@ -252,4 +263,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

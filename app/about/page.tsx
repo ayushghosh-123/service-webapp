@@ -1,32 +1,67 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle  } from '@/components/ui/card';
-import { Users, Award  } from 'lucide-react';
-import Image from 'next/image';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Users, Award } from "lucide-react";
+import Image from "next/image";
 
 export default function AboutPage() {
   const team = [
     {
-      name: "Tanmoy Saha",
-      bio: "Former VP of Operations at TechCorp with 15+ years of B2B experience.",
-      image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=400"
+      name: "Tonmoy Saha",
+      qualifications: [
+        "BPT (WBUHS)",
+        "MPT-Neurology (WBUHS)",
+        "MIAP",
+        "M.FIMT",
+        "CDNT (UK)",
+      ],
+      current_roles: {
+        department_incharge:
+          "LIVGASTRO Center for Integrative Liver Gastro Care, Kolkata",
+        chief_physiotherapist:
+          "Horizone Life Line Multispeciality Hospital, Kolkata",
+        founder: "RGS REHABCARE",
+      },
+      past_experience: [
+        "Ex-Physiotherapist: Desun Hospital and Heart Institute, Kolkata",
+      ],
+      education: [
+        "Master of Physiotherapy in Neurology (West Bengal University of Health Sciences)",
+      ],
+      certifications: [
+        "Certified Dry Needling Therapist (CPD-UK)",
+        "Certificate in Cupping Therapy",
+      ],
+      memberships: [
+        "Federation of Indian Manual Therapist",
+        "Indian Association of Physiotherapist",
+      ],
+      image: "/tonmoy.svg",
     },
     {
       name: "Sanhita Ghosh",
-      role: "CTO & Co-Founder",
-      bio: "Ex-Google engineer specializing in enterprise automation and AI solutions.",
-      image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400"
-    }
+      qualifications: [
+        "General Nursing and Midwifery",
+        "Higher Secondary Education",
+      ],
+      current_roles: {
+        staff_nurse: "PARKVIEW Super Speciality Hospital, Kolkata",
+      },
+      education: ["Diploma in Nursing"],
+      image: "/sahita.svg",
+    },
   ];
 
   const values = [
     {
       icon: <Users className="h-8 w-8" />,
       title: "Customer First",
-      description: "Every decision we make is guided by what's best for our customers and their ___"
+      description:
+        "Every decision we make is guided by what's best for our customers and their well-being.",
     },
     {
       icon: <Award className="h-8 w-8" />,
       title: "Excellence",
-      description: "We maintain the highest standards in everything we deliver to our customer ."
+      description:
+        "We maintain the highest standards in everything we deliver to our customers.",
     },
   ];
 
@@ -41,47 +76,61 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p className="text-lg">
-                  At <span className="font-semibold text-primary">Pinakdev Healthcare & Hospitality</span>,
-                  our journey began with a simple belief —{" "}
-                  <span className="italic">healing should be compassionate, accessible, and dignified</span>.
-                  We recognized that both healthcare and hospitality share one powerful foundation:{" "}
+                  At{" "}
+                  <span className="font-semibold text-primary">
+                    Pinakdev Healthcare & Hospitality
+                  </span>
+                  , our journey began with a simple belief —{" "}
+                  <span className="italic">
+                    healing should be compassionate, accessible, and dignified
+                  </span>
+                  . We recognized that both healthcare and hospitality share one
+                  powerful foundation:{" "}
                   <span className="font-medium text-gray-900">care for people</span>.
                 </p>
 
                 <p>
-                  Our healthcare services has been designed to ensure the best possible patient care in a comfortable and relaxed environment along with ease of access. This is an excellent facility for patients recovering from injury, sports injury, or post-operative rehabilitation. At RGS REHABCARE our goal is to provide the highest level of patient care.
+                  Our healthcare services have been designed to ensure the best
+                  possible patient care in a comfortable and relaxed environment
+                  along with ease of access. This is an excellent facility for
+                  patients recovering from injury, sports injury, or
+                  post-operative rehabilitation. At RGS REHABCARE, our goal is to
+                  provide the highest level of patient care.
                 </p>
 
                 <p>
-                  In hospitality, we extend the same principles of comfort and trust.
-                  Whether it&s through curated patient accommodations, supportive environments,
-                  or staff trained to prioritize empathy, we make sure every individual
-                  feels at home during their journey with us.
+                  In hospitality, we extend the same principles of comfort and
+                  trust. Whether it's through curated patient accommodations,
+                  supportive environments, or staff trained to prioritize empathy,
+                  we make sure every individual feels at home during their journey
+                  with us.
                 </p>
 
                 <p className="text-lg font-semibold text-primary">
-                  For us, healthcare and hospitality are not two industries —
-                  they are one shared mission:{" "}
-                  <span className="underline decoration-primary">to serve people with excellence and compassion</span>.
+                  For us, healthcare and hospitality are not two industries — they
+                  are one shared mission:{" "}
+                  <span className="underline decoration-primary">
+                    to serve people with excellence and compassion
+                  </span>
+                  .
                 </p>
               </div>
             </div>
 
             {/* Right Image */}
             <div className="relative">
-              <div className=" rounded-full overflow-hidden">
-                <Image width={700} height={700} src='/logo.svg' alt='logo image' className='w-fit h-screen'></Image>
+              <div className="rounded-full overflow-hidden">
+                <Image
+                  width={500}
+                  height={500}
+                  src="/logo.svg"
+                  alt="logo image"
+                  className="w-full h-auto"
+                />
               </div>
-              {/* <div className="absolute -bottom-6 -right-6 bg-white  rounded-lg p-4 w-64">
-                <p className="text-sm font-medium text-gray-800">
-                  <span className="text-primary font-bold">7+ Years</span> of trusted
-                  service in patient care and hospitality excellence.
-                </p>
-              </div> */}
             </div>
           </div>
         </section>
-
 
         {/* Values Section */}
         <section className="bg-gray-50 py-16">
@@ -89,22 +138,24 @@ export default function AboutPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Values</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                The principles that guide everything we do and every solution we build trust .
+                The principles that guide everything we do and every solution we
+                build.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {values.map((value, index) => (
-                <Card key={index} className="text-center border-none shadow-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {values.map((val, index) => (
+                <Card
+                  key={index}
+                  className="text-center hover:shadow-lg transition-shadow duration-300"
+                >
                   <CardHeader>
-                    <div className="mx-auto bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center text-primary mb-4">
-                      {value.icon}
-                    </div>
-                    <CardTitle className="text-xl">{value.title}</CardTitle>
+                    <div className="mx-auto mb-4 text-primary">{val.icon}</div>
+                    <CardTitle className="text-xl">{val.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-gray-600 leading-relaxed">
-                      {value.description}
+                    <CardDescription className="text-gray-600">
+                      {val.description}
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -116,15 +167,21 @@ export default function AboutPage() {
         {/* Team Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Meet Our Team
+            </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The experienced leaders driving innovation and growth at B2B Solutions.
+              The experienced leaders driving innovation and growth at Pinakdev
+              Healthcare & Hospitality.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {team.map((member, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card
+                key={index}
+                className="text-center hover:shadow-lg transition-shadow duration-300"
+              >
                 <CardHeader>
                   <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4">
                     <img
@@ -134,12 +191,73 @@ export default function AboutPage() {
                     />
                   </div>
                   <CardTitle className="text-xl">{member.name}</CardTitle>
-                  {/* <Badge variant="secondary" className="mx-auto w-fit">{member.role}</Badge> */}
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed">
-                    {member.bio}
-                  </CardDescription>
+                <CardContent className="space-y-4 text-left">
+                  {member.qualifications && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Qualifications</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {member.qualifications.map((q, i) => (
+                          <li key={i}>{q}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {member.current_roles && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Current Roles</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {Object.entries(member.current_roles).map(([, value], i) => (
+                          <li key={i}>{value}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {member.past_experience && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Past Experience</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {member.past_experience.map((exp, i) => (
+                          <li key={i}>{exp}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {member.education && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Education</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {member.education.map((edu, i) => (
+                          <li key={i}>{edu}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {member.certifications && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Certifications</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {member.certifications.map((cert, i) => (
+                          <li key={i}>{cert}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {member.memberships && (
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Memberships</h4>
+                      <ul className="list-disc list-inside text-gray-600 text-sm">
+                        {member.memberships.map((mem, i) => (
+                          <li key={i}>{mem}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
