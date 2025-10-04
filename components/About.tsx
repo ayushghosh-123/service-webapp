@@ -40,14 +40,14 @@ export default function AboutPage() {
         "Federation of Indian Manual Therapist",
         "Indian Association of Physiotherapist",
       ],
-      image: "/logo.svg", // added fallback image
+      image: "/tonmoy.svg", // added fallback image
     },
     {
       name: "Sanhita Ghosh",
       bio: "Ex-Google engineer specializing in enterprise automation and AI solutions.",
       image:
-        "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
+        "/sahita.svg"
+    }
   ];
 
   return (
