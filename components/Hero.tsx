@@ -117,7 +117,7 @@ export default function Hero() {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.8 }}
                 className={`relative w-full h-[300px] lg:h-[450px] flex items-center justify-center rounded-2xl drop-shadow-2xl 
-                  ${slides[index].image.includes("logo.svg") ? "bg-white" : "bg-yellow-300"}`}
+                  ${slides[index].image.includes("logo.svg") ? "bg-white" : "bg-yellow-200"}`}
               >
                 <Image
                   src={slides[index].image}

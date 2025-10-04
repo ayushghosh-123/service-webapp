@@ -49,13 +49,7 @@ Message: ${form.message}`;
       title: "Call Us",
       details: "+91 8617073641",
       description: "Available Mon-Sat, 9AM - 7PM",
-    },
-    {
-      icon: <MapPin className="h-6 w-6" />,
-      title: "Visit Us",
-      details: "Kolkata, West Bengal, India",
-      description: "Our office is open Mon-Fri, 10AM - 6PM",
-    },
+    }
   ];
 
   return (
@@ -208,7 +202,7 @@ Message: ${form.message}`;
             Still have questions?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Our team is always here to help you. Contact us today and let’s
+            Our team is always here to help you. Contact us today and let&s
             discuss your needs.
           </p>
           <button

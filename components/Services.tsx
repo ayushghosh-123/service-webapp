@@ -31,8 +31,8 @@ export default function Industries() {
         "Sustainable Fashion",
         "Retail Technology",
       ],
-      color: "from-purple-500 to-indigo-600",
-      bgColor: "bg-purple-50",
+      color: "from-green-500 to-indigo-600",
+      bgColor: "bg-green-50",
       link: "https://wa.me/917718535104", // WhatsApp
       posts: 8,
       type: "contact", // ✅ mark as contact
