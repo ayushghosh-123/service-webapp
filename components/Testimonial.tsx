@@ -10,48 +10,48 @@ interface Testimonial {
   rating: number;
 }
 
-// Sample testimonial data.
+// ✅ Updated testimonial data with Indian names & feedback
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Jane Doe",
-    quote: "The service exceeded all my expectations. The team was responsive, professional, and delivered incredible results. I highly recommend them!",
-    avatar: "https://placehold.co/100x100/A0B9D9/FFFFFF?text=JD",
+    name: "Amit Sharma",
+    quote: "The service was excellent. The team handled everything professionally and delivered results on time. Very reliable!",
+    avatar: "https://placehold.co/100x100/FFA500/FFFFFF?text=AS",
     rating: 5,
   },
   {
     id: 2,
-    name: "John Smith",
-    quote: "A truly seamless experience from start to finish. The quality of their work is unmatched, and I'm very impressed with their dedication.",
-    avatar: "https://placehold.co/100x100/F4C470/FFFFFF?text=JS",
+    name: "Priya Patel",
+    quote: "I had a wonderful experience. They understood my needs clearly and provided great support throughout. Highly recommended.",
+    avatar: "https://placehold.co/100x100/FF69B4/FFFFFF?text=PP",
     rating: 5,
   },
   {
     id: 3,
-    name: "Emily White",
-    quote: "I was a bit skeptical at first, but they proved me wrong! Fantastic support and a product that really works. I'll be a returning customer.",
-    avatar: "https://placehold.co/100x100/98DD8B/FFFFFF?text=EW",
+    name: "Rahul Verma",
+    quote: "Very smooth and transparent process. The customer service team was always available to guide me whenever I had questions.",
+    avatar: "https://placehold.co/100x100/4682B4/FFFFFF?text=RV",
     rating: 4,
   },
   {
     id: 4,
-    name: "Michael Chen",
-    quote: "Excellent value for the price. The customer service was top-notch and they quickly resolved all my questions. Great job!",
-    avatar: "https://placehold.co/100x100/F2A7A4/FFFFFF?text=MC",
+    name: "Sneha Iyer",
+    quote: "They really care about customer satisfaction. The results were beyond my expectations. I would love to work with them again.",
+    avatar: "https://placehold.co/100x100/9370DB/FFFFFF?text=SI",
     rating: 5,
   },
   {
     id: 5,
-    name: "Sarah Parker",
-    quote: "The team's creativity and attention to detail were amazing. They listened to my needs and brought my vision to life. A pleasure to work with.",
-    avatar: "https://placehold.co/100x100/CE87B5/FFFFFF?text=SP",
+    name: "Vikram Singh",
+    quote: "Affordable, efficient, and trustworthy. The team resolved my issues quickly and explained everything in detail.",
+    avatar: "https://placehold.co/100x100/32CD32/FFFFFF?text=VS",
     rating: 5,
   },
   {
     id: 6,
-    name: "David Lee",
-    quote: "I've used many services, but this one stands out. The communication was clear, the process was transparent, and the final outcome was perfect.",
-    avatar: "https://placehold.co/100x100/80C4E7/FFFFFF?text=DL",
+    name: "Anjali Gupta",
+    quote: "Fantastic experience! I was a bit unsure initially, but they delivered exactly what they promised. Great value for money.",
+    avatar: "https://placehold.co/100x100/DC143C/FFFFFF?text=AG",
     rating: 4,
   },
 ];
@@ -71,7 +71,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
       <div>
         <h3 className="text-xl font-bold text-slate-800">{testimonial.name}</h3>
         {/* Display star ratings */}
-        <div className="flex text-black mt-1">
+        <div className="flex text-yellow-500 mt-1">
           {Array(testimonial.rating).fill(null).map((_, i) => (
             <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.786.57-1.841-.197-1.54-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z" />
@@ -125,7 +125,7 @@ export default function App() {
           What Our Customers Say
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Hear from real people about their experiences with our service. Their feedback drives us to be better every day.
+          Hear from real people about their experiences with our service. Their feedback motivates us to improve every day.
         </p>
       </div>
 
